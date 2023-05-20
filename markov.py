@@ -4,10 +4,10 @@ def genMarkov(input):
     # generates the actual markov chain
     markov = {}
     words = input.split(" ")
-    index = 1
+    index = 2
 
     for word in words[index:]:
-        key = " ".join(words[(index-1):index])
+        key = " ".join(words[(index-2):index])
         #slices words into groupings of 2
         if key in markov:
             markov[key].append(word)
