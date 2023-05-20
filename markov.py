@@ -19,7 +19,6 @@ def genMarkov(input):
 def genText(markov):
     words = random.choice(list(markov.keys())).split(" ")
     text = " ".join(words) + " "
-    # text = text + " "
     for _ in range(50):
         key = " ".join(words)
         if key in markov:
