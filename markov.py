@@ -23,10 +23,10 @@ def genText(markov):
     for _ in range(50):
         key = " ".join(words)
         if key in markov:
-            newword = random.choice(markov[key])
-            text += newword + " "
+            addition = random.choice(markov[key])
+            text += addition + " "
             words.pop(0)
-            words.append(newword)
+            words.append(addition)
         else:
             break
     return text
