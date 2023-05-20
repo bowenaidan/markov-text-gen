@@ -5,10 +5,11 @@ def genMarkov(input):
     # generates the actual Markov chain
     markov = {}
     words = input.split(" ")
-    index = 2
+    index = 1
+    window = index
 
     for word in words[index:]:
-        key = " ".join(words[(index-2):index])
+        key = " ".join(words[(index-window):index])
         if key in markov:
             if word in markov[key]:
                 markov[key][word] += 1
@@ -20,6 +21,7 @@ def genMarkov(input):
     return markov
 
 def genText(markov):
+    #generates text
     words = random.choice(list(markov.keys())).split(" ")
     text = " ".join(words) + " "
     for _ in range(50):
